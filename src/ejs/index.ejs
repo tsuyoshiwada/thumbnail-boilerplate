@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title><%= title %></title>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1 class="brand"><%= title %></h1>
+    <% blocks.forEach(function(block, i){ %>
+    <section class="block">
+      <h1 class="block__title"><%= block.heading %></h1><%
+      block.list.forEach(function(item, n){ %>
+        <% if( wrapRow ){ %>
+        <div class="row"><% } %><div class="col">
+            <a href="<%= item.id + ".html" %>">
+              <span><%= item.title %></span>
+              <span><img src="<%= item.thumbnail %>" alt="<%= item.title %>" /></span>
+            </a>
+          </div><% if( wrapRow ){ %>
+        </div><% } %><% }) %></section><% }) %>
+  </div>
+
+  <script type="text/javascript" src="js/app.bundle.js"></script>
+</body>
+</html>

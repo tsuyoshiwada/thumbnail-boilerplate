@@ -1,0 +1,23 @@
+doctype html
+html
+  head
+    meta(charset="utf-8")
+    meta(http-quiv="X-UA-Compatible", content="IE=edge")
+    meta(meta="viewport", content="width=device-width,initial-scale=1.0")
+    title=title
+    link(rel="stylesheet", href="css/style.css")
+  body
+    div.container
+      h1.brand=title
+
+      each block, i in blocks
+        section.block
+          h1.block__title=block.heading
+          div.block__items
+            each item, n in block.items
+              div.item
+                span.item__title=item.title
+                a.item__link(href=item.id+".html")
+                  img(src=item.thumbnail, alt=item.title)
+            
+    script(type="text/javascript", src="js/app.bundle.js")
