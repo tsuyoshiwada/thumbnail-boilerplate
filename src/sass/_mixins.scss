@@ -1,11 +1,17 @@
-@mixin e($name) {
-  &__#{$name} {
-    @content;
+// Elements
+@mixin e($names...) {
+  @each $name in $names {
+    &__#{$name} {
+      @content;
+    }
   }
 }
 
-@mixin m($name) {
-  &--#{$name} {
-    @content;
+// Modifiers
+@mixin m($names...) {
+  @each $name in $names {
+    &--#{$name} {
+      @content;
+    }
   }
 }
