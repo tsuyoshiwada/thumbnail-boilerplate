@@ -38,7 +38,7 @@ gulp.task "copy", ->
 gulp.task "jade", ->
   delete require.cache[__dirname + "/config.coffee"]
   config = require "./config.coffee"
-  
+
   # pages
   config.blocks.forEach (block) ->
     block.items.forEach (item) ->
@@ -74,7 +74,7 @@ gulp.task "webpack", (cb) ->
       loaders: [
         {test: /\.coffee$/, loader: "coffee-loader"}
       ]
-  
+
   , (err, stats) ->
     if err
       throw new $.util.PluginError "webpack", err
@@ -121,16 +121,16 @@ gulp.task "build", (cb) ->
 gulp.task "watch", (cb) ->
   $.watch "assets/**/*", ->
     gulp.start "copy"
-  
+
   $.watch [
     "src/jade/**/*"
     "config.coffee"
   ], ->
     gulp.start "jade"
-  
+
   $.watch "src/coffee/**/*", ->
     gulp.start "webpack"
-  
+
   $.watch "src/sass/**/*", ->
     gulp.start "sass"
 
