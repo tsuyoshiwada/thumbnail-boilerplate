@@ -4,10 +4,10 @@ html
     meta(charset="utf-8")
     meta(http-quiv="X-UA-Compatible", content="IE=edge")
     meta(meta="viewport", content="width=device-width,initial-scale=1.0")
-    title=title
+    title=item.title+" | "+title
     link(rel="stylesheet", href="css/style.css")
   body
     div.container--image
-      img(src=item.image, alt=item.title)
+      img(src="./images/#{item.id}.jpg", alt=item.title)
 
     script(type="text/javascript", src="js/app.bundle.js")

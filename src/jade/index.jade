@@ -17,7 +17,7 @@ html
             each item, n in block.items
               div.item
                 span.item__title=item.title
-                a.item__link(href=item.id+".html")
-                  img(src=item.thumbnail, alt=item.title)
+                a.item__link(href="#{item.id}.html", target="_blank")
+                  img(src="./images/thumbnails/#{item.id}.jpg", alt=item.title)
 
     script(type="text/javascript", src="js/app.bundle.js")
