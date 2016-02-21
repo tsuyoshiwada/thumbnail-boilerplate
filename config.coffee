@@ -1,12 +1,10 @@
 module.exports =
-  title: "案内用テンプレート"
+  title: "タイトル"
   blocks: [
-
     {
       heading: "ブロック1"
       items: [
         {id: "item1", title: "タイトル1"}
       ]
     }
-
   ]
